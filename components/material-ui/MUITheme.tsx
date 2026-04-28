@@ -50,9 +50,7 @@ export default function MUITheme({ children }: { children: ReactNode }) {
       direction: localeInfo.contentDirection,
     },
     matDataGridLocales[localeWithExtension as "faIR"],
-    matDatePickersLocales[
-      localeWithExtension as keyof typeof matDatePickersLocales
-    ],
+    matDatePickersLocales[localeWithExtension as "faIR"],
     matLocales[localeWithExtension as "faIR"],
   );
   return <ThemeProvider theme={muiTheme}>{children}</ThemeProvider>;

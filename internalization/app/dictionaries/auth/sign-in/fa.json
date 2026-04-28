@@ -3,6 +3,7 @@
   "form": {
     "userName": "نام کاربری",
     "password": "پسوورد",
-    "confirm": "ورود"
+    "confirm": "ورود",
+    "fillRequiredFields": "فیلدهای الزامی را پر کنید"
   }
 }

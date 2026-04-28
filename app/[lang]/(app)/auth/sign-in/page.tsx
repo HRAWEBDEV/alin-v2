@@ -1,3 +1,3 @@
 export default function SignInPage() {
-  return <>sign in</>;
+  return <></>;
 }
