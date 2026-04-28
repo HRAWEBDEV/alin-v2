@@ -1,31 +1,23 @@
 {
- "title": "share dictionary",
- "system": {
-  "modes": {
-   "light": "حالت روز",
-   "dark": "حالت شب",
-   "system": "سیستمی"
+  "title": "share dictionary",
+  "system": {
+    "modes": {
+      "light": "حالت روز",
+      "dark": "حالت شب",
+      "system": "سیستمی"
+    }
+  },
+  "components": {
+    "notFound": {
+      "title": "صفحه‌ای یافت نشد",
+      "goHome": "برو به خانه"
+    },
+    "noItemFound": {
+      "title": "آیتمی یافت نشد."
+    },
+    "unExpectedError": {
+      "title": "خطایی رخ داده است",
+      "pleaseTryAgainLater": "لطفا دوباره تلاش کنید"
+    }
   }
- },
- "components": {
-  "notFound": {
-   "title": "صفحه‌ای یافت نشد",
-   "goHome": "برو به خانه"
-  },
-  "noItemFound": {
-   "title": "آیتمی یافت نشد."
-  },
-  "unExpectedError": {
-   "title": "خطایی رخ داده است",
-   "pleaseTryAgainLater": "لطفا دوباره تلاش کنید"
-  },
-  "modeController": {
-   "description": "تغییر حالت"
-  },
-  "userInfoRouter": {
-   "selectProgram": "انتخاب برنامه",
-   "selectActiveProgram": "برنامه مورد نظر را انتخاب کنید",
-   "errorOccuredTryAgainLater": "خطایی رخ داده است لطفا دوباره تلاش کنید"
-  }
- }
 }
