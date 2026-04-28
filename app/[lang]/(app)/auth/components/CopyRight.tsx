@@ -8,7 +8,7 @@ export default function Copyright() {
     metaDictionary: { Copyright, owner },
   } = useShareDictionary();
   return (
-    <p className="text-sm text-neutral-700 dark:text-neutral-400">
+    <p className="text-sm text-neutral-600 dark:text-neutral-400">
       <span>&copy; </span>
       <span>{new Date().toLocaleString(locale, { year: "numeric" })} </span>
       <span>{owner} </span>-<span> {Copyright}</span>

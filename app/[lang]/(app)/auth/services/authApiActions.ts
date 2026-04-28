@@ -1,18 +1,22 @@
 import { axios } from "../../services/axios/axiosConfig";
 
-type Credentials = {
-  username: string;
+type WithPasswordCredentials = {
+  userName: string;
   password: string;
 };
 
-const signIn = ({ username, password }: Credentials) => {
+const signInWithPassword = ({
+  userName,
+  password,
+}: WithPasswordCredentials) => {
   return axios.post<{
     item1: string;
     item2: number;
   }>("/Public/UI/GetJwtToken", {
-    Username: encodeURIComponent(username),
+    Username: encodeURIComponent(userName),
     Password: encodeURIComponent(password),
   });
 };
 
-export { signIn };
+export type { WithPasswordCredentials };
+export { signInWithPassword };

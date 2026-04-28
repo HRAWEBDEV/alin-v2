@@ -26,11 +26,13 @@ export default async function AuthLayout({
   });
 
   return (
-    <div className="h-dvh main-bg flex">
-      <div className="flex flex-col basis-[55%]">
-        <header></header>
-        <main className="grow">{children}</main>
-        <footer className="flex justify-between gap-4 items-center p-2">
+    <div className="h-dvh main-bg flex overflow-hidden">
+      <div className="flex flex-col basis-[55%] grow overflow-auto">
+        <header className="basis-14 bg-background sticky z-2 top-0">
+          header
+        </header>
+        <main className="grow flex flex-col">{children}</main>
+        <footer className="flex justify-between gap-4 items-center p-2 basis-14 bg-background sticky z-2 bottom-0">
           <div></div>
           <div>
             <Copyright />
@@ -38,7 +40,7 @@ export default async function AuthLayout({
           <div></div>
         </footer>
       </div>
-      <aside className="basis-[45%] flex flex-col">
+      <aside className="basis-[45%] flex-col hidden lg:flex">
         <AuthAside />
       </aside>
     </div>

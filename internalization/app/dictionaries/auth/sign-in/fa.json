@@ -2,7 +2,7 @@
   "title": "ورود",
   "form": {
     "userName": "نام کاربری",
-    "password": "پسوورد",
+    "password": "رمز عبور",
     "confirm": "ورود",
     "fillRequiredFields": "فیلدهای الزامی را پر کنید"
   }
