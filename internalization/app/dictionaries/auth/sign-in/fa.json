@@ -1,0 +1,8 @@
+{
+  "title": "ورود",
+  "form": {
+    "userName": "نام کاربری",
+    "password": "پسوورد",
+    "confirm": "ورود"
+  }
+}
