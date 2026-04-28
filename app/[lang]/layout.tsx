@@ -4,6 +4,7 @@ import ReactQueryProvider from "@/services/react-query/ReactQueryProvider";
 import BaseConfigProvider from "@/services/base-config/BaseConfigProvider";
 import MUITheme from "@/components/material-ui/MUITheme";
 import MUILocale from "@/components/material-ui/MUILocale";
+import MUICache from "@/components/material-ui/MUICache";
 import {
   type Locale,
   localesList,
@@ -135,7 +136,9 @@ export default async function RootLayout(props: LayoutProps<"/[lang]">) {
         <ReactQueryProvider>
           <BaseConfigProvider activeLocale={lang as Locale}>
             <MUITheme>
-              <MUILocale>{props.children}</MUILocale>
+              <MUILocale>
+                <MUICache>{props.children}</MUICache>
+              </MUILocale>
             </MUITheme>
           </BaseConfigProvider>
         </ReactQueryProvider>
