@@ -37,8 +37,8 @@ export default function MUITheme({ children }: { children: ReactNode }) {
           contrastText: "var(--secondary-foreground)",
         },
         text: {
-          primary: "var(--primary-foreground)",
-          secondary: "var(--secondary-foreground)",
+          primary: "var(--foreground)",
+          secondary: "var(--foreground)",
         },
       },
       typography: {
