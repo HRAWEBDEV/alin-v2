@@ -6,6 +6,7 @@ import ShareDictionaryProvider from "./services/share-dictionary/ShareDictionary
 import { Toaster } from "@/components/ui/sonner";
 import { locales } from "@/internalization/app/localization";
 import AxiosLoggerInterceptor from "./services/axios-logger/AxiosLoggerInterceptor";
+import AxiosBaseInterceptor from "./services/axios-base-interceptor/AxiosBaseInterceptor";
 
 export default async function AppLayout({
   children,
@@ -31,6 +32,7 @@ export default async function AppLayout({
       signinDictionary={signinDic}
     >
       <AxiosLoggerInterceptor />
+      <AxiosBaseInterceptor />
       {children}
       <Toaster
         className="font-[inherit]!"
