@@ -1,5 +1,6 @@
 import AuthAside from "./components/AuthAside";
 import Copyright from "./components/CopyRight";
+import AuthControllers from "./components/AuthControllers";
 import { getAuthDictionary } from "@/internalization/app/dictionaries/auth/dictionary";
 import { type Locale } from "@/internalization/app/localization";
 import { Metadata } from "next";
@@ -29,7 +30,7 @@ export default async function AuthLayout({
     <div className="h-dvh main-bg flex overflow-hidden">
       <div className="flex flex-col basis-[55%] grow overflow-auto">
         <header className="basis-14 bg-background sticky z-2 top-0">
-          header
+          <AuthControllers />
         </header>
         <main className="grow flex flex-col">{children}</main>
         <footer className="flex justify-between gap-4 items-center p-2 basis-14 bg-background sticky z-2 bottom-0">
