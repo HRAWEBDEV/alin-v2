@@ -12,9 +12,6 @@ export default function AxiosLoggerInterceptor() {
     };
     const requestWatcher = axios.interceptors.request.use(
       (config) => {
-        const urlSegments = config.url?.split("/");
-        if (urlSegments?.at(2)?.toLowerCase() !== "dashboard") {
-        }
         return config;
       },
       (error) => {
