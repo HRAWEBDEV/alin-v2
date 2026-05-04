@@ -3,6 +3,9 @@ import { getShareDictionary } from "@/internalization/app/dictionaries/share/dic
 import { getMetaDictionary } from "@/internalization/app/dictionaries/meta/dictionary";
 import { getSigninDictionary } from "@/internalization/app/dictionaries/auth/sign-in/dictionary";
 import ShareDictionaryProvider from "./services/share-dictionary/ShareDictionaryProvider";
+import { Toaster } from "@/components/ui/sonner";
+import { locales } from "@/internalization/app/localization";
+import AxiosLoggerInterceptor from "./services/axios-logger/AxiosLoggerInterceptor";
 
 export default async function AppLayout({
   children,
@@ -20,13 +23,21 @@ export default async function AppLayout({
       locale: lang as Locale,
     }),
   ]);
+  const { contentDirection } = locales[lang as Locale];
   return (
     <ShareDictionaryProvider
       metaDictionary={metaDic}
       shareDictionary={shareDic}
       signinDictionary={signinDic}
     >
+      <AxiosLoggerInterceptor />
       {children}
+      <Toaster
+        className="font-[inherit]!"
+        position={contentDirection === "rtl" ? "top-right" : "top-left"}
+        richColors
+        closeButton
+      />
     </ShareDictionaryProvider>
   );
 }
