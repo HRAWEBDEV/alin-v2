@@ -28,8 +28,11 @@ import {
 } from "../../services/authApiActions";
 import { useMutation } from "@tanstack/react-query";
 import { Spinner } from "@/components/ui/spinner";
+import { setUserLoginToken } from "../../utils/signinTokenManger";
+import { useGoHome } from "../../../hooks/useGoHome";
 
 export default function SigninWithPassword({ dic }: { dic: SigninDictionary }) {
+  const goHome = useGoHome();
   const [showPassword, setShowPassword] = useState(false);
   const {
     register,
@@ -44,6 +47,10 @@ export default function SigninWithPassword({ dic }: { dic: SigninDictionary }) {
     useMutation({
       mutationFn(credentials: WithPasswordCredentials) {
         return signInWithPassword(credentials);
+      },
+      onSuccess(res) {
+        setUserLoginToken(res.data.item1);
+        goHome();
       },
     });
 
