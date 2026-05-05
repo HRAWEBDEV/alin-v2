@@ -60,10 +60,17 @@ type OwnerInfo = {
 type StoreOwnerInfo = {
   owners: Record<
     string,
-    Owner & {
+    Pick<Owner, "id" | "name"> & {
       departments: Record<
         string,
-        Department & {
+        Pick<
+          Department,
+          | "departmentID"
+          | "active"
+          | "departmentName"
+          | "departmentRouteMap"
+          | "ownerID"
+        > & {
           programs: Record<
             string,
             Program & {
@@ -80,9 +87,22 @@ function getStoreOwnerInfo(ownerInfo: OwnerInfo["value"]) {
   const storeOwnerInfo: StoreOwnerInfo = {
     owners: {},
   };
+  function getStandardLink(link?: string) {
+    return link ? link.trim().toLocaleLowerCase().replaceAll(" ", "-") : "";
+  }
+  function updateMenusLink(menus: Menu[]) {
+    menus.forEach((menu) => {
+      menu.routeMap = getStandardLink(menu.routeMap);
+      if (!!menu.childs.length) {
+        updateMenusLink(menu.childs);
+      }
+    });
+  }
+  updateMenusLink(ownerInfo.menus);
   ownerInfo.owners.forEach((owner) => {
     storeOwnerInfo.owners[owner.id.toString()] = {
-      ...owner,
+      id: owner.id,
+      name: owner.name,
       departments: {},
     };
   });
@@ -91,7 +111,11 @@ function getStoreOwnerInfo(ownerInfo: OwnerInfo["value"]) {
       storeOwnerInfo.owners[dep.ownerID.toString()].departments[
         dep.departmentID.toString()
       ] = {
-        ...dep,
+        departmentID: dep.departmentID,
+        active: dep.active,
+        departmentName: dep.departmentName,
+        departmentRouteMap: getStandardLink(dep.departmentRouteMap),
+        ownerID: dep.ownerID,
         programs: {},
       };
     }
@@ -109,6 +133,7 @@ function getStoreOwnerInfo(ownerInfo: OwnerInfo["value"]) {
       program.departmentID.toString()
     ].programs[`${program.id}_${program.systemID}`] = {
       ...program,
+      systemRouteMap: getStandardLink(program.systemRouteMap),
       menus: ownerInfo.menus.filter((menu) => {
         if (menu.systemID !== program.systemID) return false;
         if (

@@ -30,6 +30,7 @@ export default function PanelInfoProvider({
       return res.data.value;
     },
   });
+  console.log(storeOwnerInfo);
 
   const ctx: PanelInfoStore = {
     title: "panel info",
