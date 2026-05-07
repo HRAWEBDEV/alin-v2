@@ -8,6 +8,9 @@
     }
   },
   "components": {
+    "modeController": {
+      "description": "تغییر حالت"
+    },
     "notFound": {
       "title": "صفحه‌ای یافت نشد",
       "goHome": "برو به خانه"
