@@ -3,8 +3,10 @@ import { useShareDictionary } from "../../../services/share-dictionary/shareDict
 import { Button } from "@/components/ui/button";
 import { IoHome, IoPersonCircle, IoAppsSharp } from "react-icons/io5";
 import Link from "next/link";
+import { useBaseConfig } from "@/services/base-config/baseConfigContext";
 
 export default function Tabs() {
+  const { locale } = useBaseConfig();
   const {
     shareDictionary: { tabs: tabsDictionary },
   } = useShareDictionary();
@@ -14,7 +16,7 @@ export default function Tabs() {
   return (
     <div className="h-(--panel-tabs-height) z-(--panel-tabs-zindex) fixed bottom-0 inset-x-0 border-t border-input shadow-[0_-10px_15px_-3px_rgb(0,0,0,0.1),0_-4px_6px_-4px_rgb(0,0,0,0.1)] lg:hidden shrink-0 flex items-center  transition-transform text-neutral-700 dark:text-neutral-300">
       <Button variant="ghost" className={tabClass} asChild>
-        <Link href="#">
+        <Link href={`/${locale}`}>
           <IoHome className={tabIconClass} />
           <p>{tabsDictionary.home}</p>
         </Link>

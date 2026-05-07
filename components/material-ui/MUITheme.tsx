@@ -17,36 +17,36 @@ export default function MUITheme({ children }: { children: ReactNode }) {
       spacing: (factor: number) => `${0.25 * factor}rem`,
       cssVariables: true,
       breakpoints,
-      // palette: {
-      //   primary: {
-      //     main: "var(--primary)",
-      //     light: "var(--primary)",
-      //     dark: "var(--primary)",
-      //     contrastText: "var(--primary-foreground)",
-      //   },
-      //   secondary: {
-      //     main: "var(--secondary)",
-      //     light: "var(--secondary)",
-      //     dark: "var(--secondary)",
-      //     contrastText: "var(--secondary-foreground)",
-      //   },
-      //   success: {
-      //     main: "var(--secondary)",
-      //     light: "var(--secondary)",
-      //     dark: "var(--secondary)",
-      //     contrastText: "var(--secondary-foreground)",
-      //   },
-      //   text: {
-      //     primary: "var(--foreground)",
-      //     secondary: "var(--foreground)",
-      //   },
-      // },
-      // typography: {
-      //   fontFamily:
-      //     locale === "fa"
-      //       ? `"faSans", "Helvetica", "Arial", sans-serif`
-      //       : `"enRoboto", "Helvetica", "Arial", sans-serif`,
-      // },
+      palette: {
+        primary: {
+          main: "var(--primary)",
+          light: "var(--primary)",
+          dark: "var(--primary)",
+          contrastText: "var(--primary-foreground)",
+        },
+        secondary: {
+          main: "var(--secondary)",
+          light: "var(--secondary)",
+          dark: "var(--secondary)",
+          contrastText: "var(--secondary-foreground)",
+        },
+        success: {
+          main: "var(--secondary)",
+          light: "var(--secondary)",
+          dark: "var(--secondary)",
+          contrastText: "var(--secondary-foreground)",
+        },
+        text: {
+          primary: "var(--foreground)",
+          secondary: "var(--foreground)",
+        },
+      },
+      typography: {
+        fontFamily:
+          locale === "fa"
+            ? `"faSans", "Helvetica", "Arial", sans-serif`
+            : `"enRoboto", "Helvetica", "Arial", sans-serif`,
+      },
       direction: localeInfo.contentDirection,
     },
     matDataGridLocales[localeWithExtension as "faIR"],
