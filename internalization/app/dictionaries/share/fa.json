@@ -1,38 +1,39 @@
 {
-  "title": "share dictionary",
-  "system": {
-    "modes": {
-      "light": "حالت روز",
-      "dark": "حالت شب",
-      "system": "سیستمی"
-    }
-  },
-  "tabs": {
-    "home": "خانه",
-    "menus": "منوها",
-    "programs": "برنامه ها",
-    "profile": "پروفایل"
-  },
-  "components": {
-    "navigation": {
-      "title": "برنامه ها"
-    },
-    "profile": {
-      "exit": "خروج"
-    },
-    "modeController": {
-      "description": "تغییر حالت"
-    },
-    "notFound": {
-      "title": "صفحه‌ای یافت نشد",
-      "goHome": "برو به خانه"
-    },
-    "noItemFound": {
-      "title": "آیتمی یافت نشد."
-    },
-    "unExpectedError": {
-      "title": "خطایی رخ داده است",
-      "pleaseTryAgainLater": "لطفا دوباره تلاش کنید"
-    }
+ "title": "share dictionary",
+ "system": {
+  "modes": {
+   "light": "حالت روز",
+   "dark": "حالت شب",
+   "system": "سیستمی"
   }
+ },
+ "tabs": {
+  "home": "خانه",
+  "menus": "منوها",
+  "programs": "برنامه ها",
+  "profile": "پروفایل"
+ },
+ "components": {
+  "navigation": {
+   "title": "برنامه ها",
+   "close": "بستن"
+  },
+  "profile": {
+   "exit": "خروج"
+  },
+  "modeController": {
+   "description": "تغییر حالت"
+  },
+  "notFound": {
+   "title": "صفحه‌ای یافت نشد",
+   "goHome": "برو به خانه"
+  },
+  "noItemFound": {
+   "title": "آیتمی یافت نشد."
+  },
+  "unExpectedError": {
+   "title": "خطایی رخ داده است",
+   "pleaseTryAgainLater": "لطفا دوباره تلاش کنید"
+  }
+ }
 }
