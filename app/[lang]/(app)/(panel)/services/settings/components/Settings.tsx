@@ -18,7 +18,7 @@ export default function Settings() {
  const { show, toggle } = useSettingsContext();
  return (
   <Dialog open={show} onOpenChange={() => toggle(false)}>
-   <DialogContent className='flex flex-col w-full h-[80dvh] sm:w-[min(95%,40rem)] max-w-none! p-0 overflow-hidden'>
+   <DialogContent className='flex flex-col h-[80dvh] w-[min(95%,40rem)] max-w-none! p-0 overflow-hidden'>
     <DialogHeader className='p-4 border-b border-input'>
      <DialogTitle className='text-xl'>{settingsDic.title}</DialogTitle>
      <DialogDescription className='hidden'></DialogDescription>

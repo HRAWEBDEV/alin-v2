@@ -1,5 +1,6 @@
 import PanelInfoProvider from './services/panel-info/PanelInfoProvider';
 import NavigationProvider from './services/navigation/NavigationProvider';
+import PanelRouterProvider from './services/panel-router/PanelRouterProvider';
 import ProfileProvider from './services/profile/ProfileProvider';
 import SettingsProvider from './services/settings/SettingsProvider';
 import AxiosCredentialsInterceptor from './services/axios-credentials-interceptor/AxiosCredentialsInterceptor';
@@ -16,23 +17,25 @@ export default function PanelLayout({ children }: LayoutProps<'/[lang]'>) {
   <div className='h-dvh flex flex-col overflow-hidden'>
    <AxiosCredentialsInterceptor />
    <PanelInfoProvider>
-    <NavigationProvider>
-     <ProfileProvider>
-      <SettingsProvider>
-       <Header />
-       <div className='grow flex overflow-hidden'>
-        <DesktopNav />
-        <MainWrapperSetupProvider>
-         {children}
-         <Profile />
-         <Settings />
-         <MobileNav />
-        </MainWrapperSetupProvider>
-       </div>
-       <Tabs />
-      </SettingsProvider>
-     </ProfileProvider>
-    </NavigationProvider>
+    <PanelRouterProvider>
+     <NavigationProvider>
+      <ProfileProvider>
+       <SettingsProvider>
+        <Header />
+        <div className='grow flex overflow-hidden'>
+         <DesktopNav />
+         <MainWrapperSetupProvider>
+          {children}
+          <Profile />
+          <Settings />
+          <MobileNav />
+         </MainWrapperSetupProvider>
+        </div>
+        <Tabs />
+       </SettingsProvider>
+      </ProfileProvider>
+     </NavigationProvider>
+    </PanelRouterProvider>
    </PanelInfoProvider>
   </div>
  );

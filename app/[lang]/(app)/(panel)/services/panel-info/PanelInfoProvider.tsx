@@ -1,49 +1,49 @@
-"use client";
-import { ReactNode, useState, useEffect } from "react";
-import { type PanelInfoStore, panelInfoContext } from "./panelInfoCotext";
-import { useQuery } from "@tanstack/react-query";
+'use client';
+import { ReactNode, useState, useEffect } from 'react';
+import { type PanelInfoStore, panelInfoContext } from './panelInfoCotext';
+import { useQuery } from '@tanstack/react-query';
 import {
-  type StoreOwnerInfo,
-  getOwnerInfoApi,
-  getOwnerInfo,
-  getStoreOwnerInfo,
-} from "./services/panelInfoApiActions";
+ type StoreOwnerInfo,
+ getOwnerInfoApi,
+ getOwnerInfo,
+ getStoreOwnerInfo,
+} from './services/panelInfoApiActions';
 
 export default function PanelInfoProvider({
-  children,
+ children,
 }: {
-  children: ReactNode;
+ children: ReactNode;
 }) {
-  const [storeOwnerInfo, setStoreOwnerInfo] = useState<StoreOwnerInfo | null>(
-    null,
-  );
-  const {
-    data: ownerInfo,
-    isSuccess: ownerInfoIsSuccess,
-    isError: ownerInfoIsError,
-    isFetching: ownerInfoIsFetching,
-  } = useQuery({
-    staleTime: "static",
-    queryKey: [getOwnerInfoApi],
-    async queryFn({ signal }) {
-      const res = await getOwnerInfo({ signal });
-      return res.data.value;
-    },
-  });
+ const [storeOwnerInfo, setStoreOwnerInfo] = useState<StoreOwnerInfo | null>(
+  null,
+ );
+ const {
+  data: ownerInfo,
+  isSuccess: ownerInfoIsSuccess,
+  isError: ownerInfoIsError,
+  isFetching: ownerInfoIsFetching,
+ } = useQuery({
+  staleTime: 'static',
+  queryKey: [getOwnerInfoApi],
+  async queryFn({ signal }) {
+   const res = await getOwnerInfo({ signal });
+   return res.data.value;
+  },
+ });
 
-  const ctx: PanelInfoStore = {
-    title: "panel info",
-    storeOwnerInfo: storeOwnerInfo!,
-  };
+ const ctx: PanelInfoStore = {
+  title: 'panel info',
+  storeOwnerInfo: storeOwnerInfo!,
+ };
 
-  useEffect(() => {
-    if (!ownerInfoIsSuccess) return;
-    setStoreOwnerInfo(getStoreOwnerInfo(ownerInfo));
-  }, [ownerInfo, ownerInfoIsSuccess]);
+ useEffect(() => {
+  if (!ownerInfoIsSuccess) return;
+  setStoreOwnerInfo(getStoreOwnerInfo(ownerInfo));
+ }, [ownerInfo, ownerInfoIsSuccess]);
 
-  return (
-    <panelInfoContext.Provider value={ctx}>
-      {ownerInfoIsSuccess && !!storeOwnerInfo && children}
-    </panelInfoContext.Provider>
-  );
+ return (
+  <panelInfoContext.Provider value={ctx}>
+   {ownerInfoIsSuccess && !!storeOwnerInfo && children}
+  </panelInfoContext.Provider>
+ );
 }
