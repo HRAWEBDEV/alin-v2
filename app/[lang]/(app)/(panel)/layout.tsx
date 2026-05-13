@@ -1,6 +1,7 @@
 import PanelInfoProvider from './services/panel-info/PanelInfoProvider';
 import NavigationProvider from './services/navigation/NavigationProvider';
 import ProfileProvider from './services/profile/ProfileProvider';
+import SettingsProvider from './services/settings/SettingsProvider';
 import AxiosCredentialsInterceptor from './services/axios-credentials-interceptor/AxiosCredentialsInterceptor';
 import Header from './components/header/Header';
 import Tabs from './components/tabs/Tabs';
@@ -16,16 +17,18 @@ export default function PanelLayout({ children }: LayoutProps<'/[lang]'>) {
    <PanelInfoProvider>
     <NavigationProvider>
      <ProfileProvider>
-      <Header />
-      <div className='grow flex overflow-hidden'>
-       <DesktopNav />
-       <MainWrapperSetupProvider>
-        {children}
-        <Profile />
-        <MobileNav />
-       </MainWrapperSetupProvider>
-      </div>
-      <Tabs />
+      <SettingsProvider>
+       <Header />
+       <div className='grow flex overflow-hidden'>
+        <DesktopNav />
+        <MainWrapperSetupProvider>
+         {children}
+         <Profile />
+         <MobileNav />
+        </MainWrapperSetupProvider>
+       </div>
+       <Tabs />
+      </SettingsProvider>
      </ProfileProvider>
     </NavigationProvider>
    </PanelInfoProvider>
