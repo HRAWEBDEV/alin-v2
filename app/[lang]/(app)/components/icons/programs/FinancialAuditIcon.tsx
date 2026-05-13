@@ -1,6 +1,6 @@
 'use client';
 import { FC } from 'react';
-import { type TProps } from '@/app/utils/customIconsTypes';
+import { type TProps } from '@/app/[lang]/(app)/utils/customIconsTypes';
 
 const FinancialAuditIcon: FC<TProps> = (props) => {
  return (
