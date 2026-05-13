@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, use } from "react";
 import { type AppModes, appModes } from "@/theme/appModes";
 import { useTheme } from "next-themes";
 import {
@@ -50,11 +50,11 @@ function ModeControllerButton() {
     setIsMounted(true);
   }, []);
 
-  if (!isMounted) <div></div>;
+  if (!isMounted) return null;
 
   return (
     <>
-      <div className="hidden lg:block">
+      <div className="hidden lg:block" suppressHydrationWarning>
         <DropdownMenu dir={localeInfo.contentDirection}>
           <DropdownMenuTrigger asChild>{modeButton}</DropdownMenuTrigger>
           <DropdownMenuContent align="end" className="w-40">
@@ -72,7 +72,7 @@ function ModeControllerButton() {
           </DropdownMenuContent>
         </DropdownMenu>
       </div>
-      <div className="inline-block lg:hidden">
+      <div className="inline-block lg:hidden" suppressHydrationWarning>
         <Drawer>
           <DrawerTrigger asChild>{modeButton}</DrawerTrigger>
           <DrawerContent>

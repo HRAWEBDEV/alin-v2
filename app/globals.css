@@ -91,6 +91,9 @@
     --panel-tabs-zindex: 40;
     --panel-header-height: 3.5rem;
     --panel-header-zindex: 40;
+    --panel-nav-programs-width: 6rem;
+    --panel-nav-menus-width: 14rem;
+    --panel-nav-zindex: 45;
 }
 
 [data-theme="dark"] {

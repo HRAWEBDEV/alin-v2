@@ -1,4 +1,5 @@
 import PanelInfoProvider from "./services/panel-info/PanelInfoProvider";
+import NavigationProvider from "./services/navigation/NavigationProvider";
 import AxiosCredentialsInterceptor from "./services/axios-credentials-interceptor/AxiosCredentialsInterceptor";
 import Header from "./components/header/Header";
 import Tabs from "./components/tabs/Tabs";
@@ -10,12 +11,14 @@ export default function PanelLayout({ children }: LayoutProps<"/[lang]">) {
     <div className="h-dvh flex flex-col">
       <AxiosCredentialsInterceptor />
       <PanelInfoProvider>
-        <Header />
-        <div className="grow flex">
-          <Nav />
-          <Main>{children}</Main>
-        </div>
-        <Tabs />
+        <NavigationProvider>
+          <Header />
+          <div className="grow flex">
+            <Nav />
+            <Main>{children}</Main>
+          </div>
+          <Tabs />
+        </NavigationProvider>
       </PanelInfoProvider>
     </div>
   );
