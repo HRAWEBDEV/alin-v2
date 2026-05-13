@@ -18,7 +18,10 @@ export default function Tabs() {
   const tabClass = "h-auto flex-col p-1! grow sm:text-base gap-1 text-sm";
   const tabIconClass = "size-8 sm:size-9";
   return (
-    <div className="h-(--panel-tabs-height) z-(--panel-tabs-zindex) fixed bottom-0 inset-x-0 border-t border-input shadow-[0_-10px_15px_-3px_rgb(0,0,0,0.1),0_-4px_6px_-4px_rgb(0,0,0,0.1)] lg:hidden shrink-0 flex items-center  transition-transform text-neutral-600 dark:text-neutral-400">
+    <div
+      className='h-(--panel-tabs-height) z-(--panel-tabs-zindex) fixed bottom-0 inset-x-0 border-t border-input shadow-[0_-10px_15px_-3px_rgb(0,0,0,0.1),0_-4px_6px_-4px_rgb(0,0,0,0.1)] lg:hidden shrink-0 flex items-center transition-transform text-neutral-600 dark:text-neutral-400 *:shrink-0 in-data-[scroll-dicretion="down"]:translate-y-20
+      '
+    >
       <Button variant="ghost" className={tabClass} onClick={() => goHome()}>
         <FaHouse className={tabIconClass} />
         <p>{tabsDictionary.home}</p>
