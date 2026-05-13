@@ -25,7 +25,7 @@ export default function MobileNav() {
    onOpenChange={() => toggleNavigation()}
    direction={localeInfo.contentDirection === 'rtl' ? 'right' : 'left'}
   >
-   <DrawerContent className='w-[min(100%,40rem)]'>
+   <DrawerContent>
     <DrawerHeader className='text-xl border-b border-input'>
      <DrawerTitle>{navigationDic.title}</DrawerTitle>
     </DrawerHeader>

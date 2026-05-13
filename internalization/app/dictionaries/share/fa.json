@@ -19,7 +19,10 @@
    "close": "بستن"
   },
   "profile": {
-   "exit": "خروج"
+   "title": "پروفایل",
+   "exit": "خروج",
+   "settings": "تنظیمات",
+   "close": "بستن"
   },
   "modeController": {
    "description": "تغییر حالت"
