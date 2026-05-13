@@ -1,5 +1,6 @@
 import PanelInfoProvider from "./services/panel-info/PanelInfoProvider";
 import NavigationProvider from "./services/navigation/NavigationProvider";
+import ProfileProvider from "./services/profile/ProfileProvider";
 import AxiosCredentialsInterceptor from "./services/axios-credentials-interceptor/AxiosCredentialsInterceptor";
 import Header from "./components/header/Header";
 import Tabs from "./components/tabs/Tabs";
@@ -12,12 +13,14 @@ export default function PanelLayout({ children }: LayoutProps<"/[lang]">) {
       <AxiosCredentialsInterceptor />
       <PanelInfoProvider>
         <NavigationProvider>
-          <Header />
-          <div className="grow flex">
-            <Nav />
-            <Main>{children}</Main>
-          </div>
-          <Tabs />
+          <ProfileProvider>
+            <Header />
+            <div className="grow flex">
+              <Nav />
+              <Main>{children}</Main>
+            </div>
+            <Tabs />
+          </ProfileProvider>
         </NavigationProvider>
       </PanelInfoProvider>
     </div>
