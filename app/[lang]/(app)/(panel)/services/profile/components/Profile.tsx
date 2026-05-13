@@ -12,7 +12,7 @@ import { useBaseConfig } from '@/services/base-config/baseConfigContext';
 import { Button } from '@/components/ui/button';
 import { RiLogoutBoxRLine, RiSettings5Line } from 'react-icons/ri';
 import { useLogout } from '@/app/[lang]/(app)/hooks/useLogoout';
-import { log } from 'node:console';
+import { useSettingsContext } from '../../settings/settingsContext';
 
 export default function Profile() {
  const logout = useLogout();
@@ -23,6 +23,7 @@ export default function Profile() {
  } = useShareDictionary();
  const { localeInfo } = useBaseConfig();
  const { show, toggle } = useProfileContext();
+ const { toggle: toggleSettings } = useSettingsContext();
  return (
   <Drawer
    open={show}
@@ -38,6 +39,10 @@ export default function Profile() {
       <Button
        className='w-full justify-start h-12 border-primary text-primary'
        variant='outline'
+       onClick={() => {
+        toggleSettings(true);
+        toggle(false);
+       }}
       >
        <RiSettings5Line className='size-8' />
        <span className='text-lg'>{profileDic.settings}</span>

@@ -8,6 +8,7 @@ import Tabs from './components/tabs/Tabs';
 import MobileNav from './components/navigation/mobile/MobileNav';
 import DesktopNav from './components/navigation/desktop/DesktopNav';
 import Profile from './services/profile/components/Profile';
+import Settings from './services/settings/components/Settings';
 import MainWrapperSetupProvider from './services/main-wrapper/MainWrapperSetupProvider';
 
 export default function PanelLayout({ children }: LayoutProps<'/[lang]'>) {
@@ -24,6 +25,7 @@ export default function PanelLayout({ children }: LayoutProps<'/[lang]'>) {
         <MainWrapperSetupProvider>
          {children}
          <Profile />
+         <Settings />
          <MobileNav />
         </MainWrapperSetupProvider>
        </div>
