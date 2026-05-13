@@ -1,3 +1,3 @@
 export default function Nav() {
-  return <nav className="hidden"></nav>;
+  return <nav></nav>;
 }
