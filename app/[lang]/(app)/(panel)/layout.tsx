@@ -5,7 +5,7 @@ import AxiosCredentialsInterceptor from "./services/axios-credentials-intercepto
 import Header from "./components/header/Header";
 import Tabs from "./components/tabs/Tabs";
 import Nav from "./components/navigation/Nav";
-import Main from "./components/main/Main";
+import MainWrapperSetupProvider from "./services/main-wrapper/MainWrapperSetupProvider";
 
 export default function PanelLayout({ children }: LayoutProps<"/[lang]">) {
   return (
@@ -17,7 +17,7 @@ export default function PanelLayout({ children }: LayoutProps<"/[lang]">) {
             <Header />
             <div className="grow flex">
               <Nav />
-              <Main>{children}</Main>
+              <MainWrapperSetupProvider>{children}</MainWrapperSetupProvider>
             </div>
             <Tabs />
           </ProfileProvider>
