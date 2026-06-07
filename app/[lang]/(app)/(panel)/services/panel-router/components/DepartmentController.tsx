@@ -56,7 +56,7 @@ export default function DepartmentController() {
           data-active-department={isDepartmentActive}
           disabled={!dep.active}
           variant='outline'
-          className='group relative h-auto w-auto flex-col size-44 max-h-none [&_svg:not([class*="size-"])]:size-[unset]! data-[active-department="true"]:bg-secondary/10 whitespace-normal shadow-lg'
+          className='group relative h-auto w-auto flex-col size-36 sm:size-44 max-h-none [&_svg:not([class*="size-"])]:size-[unset]! data-[active-department="true"]:bg-secondary/10 whitespace-normal shadow-lg'
           onClick={() => {
            onShowDepartmentController(false);
            if (!isDepartmentActive || !dep.active) {

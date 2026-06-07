@@ -73,10 +73,11 @@ export default function BreadcrumbWrapper() {
          size='sm'
          className='rounded-full size-9 text-neutral-700 dark:text-neutral-300 data-[active-bookmark="true"]:text-primary'
          onClick={() => {
+          const { parents, ...restMenu } = routeMenu!;
           toggleBookmark({
            department: routeDepartment!,
            program: routeProgram!,
-           menu: routeMenu!,
+           menu: restMenu!,
           });
          }}
         >
@@ -132,9 +133,7 @@ export default function BreadcrumbWrapper() {
          <>
           {routeMenu.parents?.map((pr) => (
            <Fragment key={pr.id}>
-            <BreadcrumbItem>
-             <BreadcrumbPage className='font-medium'>{pr.name}</BreadcrumbPage>
-            </BreadcrumbItem>
+            <BreadcrumbItem>{pr.name}</BreadcrumbItem>
             <BreadcrumbSeparator className='rtl:rotate-180' />
            </Fragment>
           ))}
