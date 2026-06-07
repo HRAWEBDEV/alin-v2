@@ -1,0 +1,26 @@
+enum Programs {
+  managementInformation = 101,
+  configManagement = 102,
+  revenueManagement = 103,
+  reservation = 105,
+  frontDesk = 106,
+  housekeeping = 107,
+  callCenter = 109,
+  restaurant = 111,
+  banquet = 112,
+  healthCenter = 113,
+  kitchen = 114,
+  education = 115,
+  store = 116,
+  cashFlow = 117,
+  generalAccounting = 118,
+  customerManagement = 119,
+  costControl = 121,
+  payroll = 126,
+  purchase = 127,
+  inventory = 128,
+  financialAudit = 131,
+  taxAffairsSystem = 132,
+}
+
+export { Programs };

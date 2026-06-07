@@ -1,0 +1,30 @@
+import { createContext, use } from 'react';
+import {
+ type Locale,
+ type LocaleInfo,
+} from '@/internalization/app/localization';
+import { OutOfContext } from '@/utils/OutOfContext';
+import { WindowResizeWatcherUtils } from '@/hooks/useWindowResizeWatchter';
+
+interface BaseConfig {
+ locale: Locale;
+ localeInfo: LocaleInfo;
+ appVersion: string;
+ appBirthDate: Date;
+ windowWatcher: WindowResizeWatcherUtils;
+ userActiveTimeZone: string;
+ setLocale: (newLocale: Locale) => unknown;
+}
+
+const appVersion = '0.5.0';
+const appBirthDate = new Date(2026, 5, 10);
+const baseConfigContext = createContext<BaseConfig | null>(null);
+
+function useBaseConfig(): BaseConfig {
+ const val = use(baseConfigContext);
+ if (!val) throw new OutOfContext('BaseConfig');
+ return val;
+}
+
+export type { BaseConfig };
+export { baseConfigContext, appVersion, appBirthDate, useBaseConfig };

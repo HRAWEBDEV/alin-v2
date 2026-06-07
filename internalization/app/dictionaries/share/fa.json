@@ -1,0 +1,69 @@
+{
+ "title": "share dictionary",
+ "system": {
+  "modes": {
+   "light": "حالت روز",
+   "dark": "حالت شب",
+   "system": "سیستمی"
+  }
+ },
+ "tabs": {
+  "home": "خانه",
+  "menus": "منوها",
+  "programs": "برنامه ها",
+  "profile": "پروفایل"
+ },
+ "components": {
+  "breadcrumb": {
+   "return": "بازگشت"
+  },
+  "departmentController": {
+   "title": "انتخاب بخش",
+   "department": "بخش"
+  },
+  "ownerController": {
+   "title": "انتخاب سازمان",
+   "owner": "سازمان"
+  },
+  "navigation": {
+   "title": "برنامه ها",
+   "search": "جستجو",
+   "close": "بستن"
+  },
+  "profile": {
+   "title": "پروفایل",
+   "exit": "خروج",
+   "settings": "تنظیمات",
+   "connectionLost": "اتصال به اینترنت قطع شده است",
+   "connected": "متصل",
+   "close": "بستن"
+  },
+  "settings": {
+   "title": "تنظیمات",
+   "close": "بستن"
+  },
+  "modeController": {
+   "description": "تغییر حالت"
+  },
+  "notFound": {
+   "title": "صفحه‌ای یافت نشد",
+   "goHome": "برو به خانه"
+  },
+  "noItemFound": {
+   "title": "آیتمی یافت نشد."
+  },
+  "unExpectedError": {
+   "title": "خطایی رخ داده است",
+   "pleaseTryAgainLater": "لطفا دوباره تلاش کنید"
+  },
+  "quickAccess": {
+   "title": "دسترسی سریع",
+   "close": "بستن"
+  },
+  "bookmarked": {
+   "title": "نشانه گذاری شده",
+   "bookmark": "نشانه گذاری",
+   "close": "بستن"
+  }
+ }
+}

@@ -1,0 +1,9 @@
+{
+  "title": "ورود",
+  "form": {
+    "userName": "نام کاربری",
+    "password": "رمز عبور",
+    "confirm": "ورود",
+    "fillRequiredFields": "فیلدهای الزامی را پر کنید"
+  }
+}
