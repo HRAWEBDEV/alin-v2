@@ -63,7 +63,7 @@ export default function Bookmared() {
              <Button
               variant='outline'
               key={menu.id}
-              className='h-auto max-h-[unset] justify-start items-stretch text-start flex-col gap-1'
+              className='h-auto max-h-[unset] justify-start items-stretch text-start flex-col gap-1 pb-2'
               asChild
              >
               <Link
@@ -75,7 +75,7 @@ export default function Bookmared() {
                })}
                onClick={() => toggle(false)}
               >
-               <div className='flex gap-4 justify-between'>
+               <div className='flex gap-4 justify-between items-center'>
                 <h3 className='text-lg'>{menu.name}</h3>
                 <Button
                  variant='ghost'
