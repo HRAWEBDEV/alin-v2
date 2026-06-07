@@ -11,6 +11,7 @@ import { type Locale, locales } from '@/internalization/app/localization';
 import { setUserLocale } from '@/utils/userLocaleManager';
 import { ThemeProvider } from 'next-themes';
 import { appModes } from '@/theme/appModes';
+import { DirectionProvider } from '@/components/ui/direction';
 
 interface Props {
  activeLocale: Locale;
@@ -60,9 +61,11 @@ export default function BaseConfigProvider({ children, activeLocale }: Props) {
 
  return (
   <baseConfigContext.Provider value={ctx}>
-   <ThemeProvider storageKey='app-theme' themes={[...appModes]} enableSystem>
-    {children}
-   </ThemeProvider>
+   <DirectionProvider dir={activeLocaleInfo.contentDirection}>
+    <ThemeProvider storageKey='app-theme' themes={[...appModes]} enableSystem>
+     {children}
+    </ThemeProvider>
+   </DirectionProvider>
   </baseConfigContext.Provider>
  );
 }
