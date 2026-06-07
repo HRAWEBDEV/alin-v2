@@ -50,7 +50,7 @@ export default function OwnerController() {
           data-active-department={isOwnerActive}
           key={owner.id}
           variant='outline'
-          className='group relative h-auto w-auto flex-col size-52 max-h-none [&_svg:not([class*="size-"])]:size-[unset]! data-[active-department="true"]:bg-secondary/10 whitespace-normal shadow-lg'
+          className='group relative h-auto w-auto flex-col size-44 max-h-none [&_svg:not([class*="size-"])]:size-[unset]! data-[active-department="true"]:bg-secondary/10 whitespace-normal shadow-lg'
           onClick={() => {
            if (isOwnerActive) return;
            changeActiveOwner(owner);
