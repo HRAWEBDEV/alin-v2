@@ -278,7 +278,7 @@ export default function Nav({
          },
         })}
        </div>
-       <div className='text-[0.85rem] font-medium'>{program.name}</div>
+       <div className='text-[0.8rem] font-medium'>{program.name}</div>
       </Button>
      );
     })}
@@ -335,7 +335,9 @@ export default function Nav({
           >
            <RiBookMarkedFill className='size-5' />
           </Button>
-          <FaSearch />
+          <div className='pe-2'>
+           <FaSearch className='size-4' />
+          </div>
          </InputGroupAddon>
         </InputGroup>
        </Field>
